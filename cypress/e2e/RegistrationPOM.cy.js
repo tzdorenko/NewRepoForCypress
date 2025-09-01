@@ -1,4 +1,4 @@
-import RegistrationPagePOM from '../support/pages/RegistrationPage';
+import RegistrationPagePOM from '../support/pages/RegistrationPagePOM';
 
 describe.only('Login / Signup Functionality', () => {
     beforeEach(() => {
@@ -8,8 +8,7 @@ describe.only('Login / Signup Functionality', () => {
     });
 
     it('should sign up successfully with valid credentials', () => {
-        loginPage
-            .typeUsername(Cypress.env('username'))
+        RegistrationPagePOM.typeUsername(Cypress.env('username'))
             .typeUserlastname(Cypress.env('userlastname'))
             .typeUseremail(Cypress.env('useremail'))
             .typePassword(Cypress.env('password'))

@@ -20,16 +20,17 @@ describe.only('Login / Signup Functionality', () => {
         cy.get('#addCarBrand').select('Porsche');
         cy.get('#addCarModel').select('Panamera');
         cy.get('#addCarMileage').type('20000');
-        cy.contains('button', 'Add').click({ force: true });
+        cy.get('button.btn.btn-primary').last().click();
+        // cy.contains('button', 'Add').click({ force: true });
 
         // cy.get('ngb-modal-window', { timeout: 10000 }).should('be.visible');
         // cy.get('.btn.btn-white.btn-sidebar.sidebar.btn').first().click();
         cy.contains('Add fuel expense').should('be.visible').click();
-        cy.get('#addExpenseMileage').type('20000');
+        cy.get('#addExpenseMileage').type('0');
         cy.get('#addExpenseLiters').type('60');
         cy.get('#addExpenseTotalCost').type('2000');
-        cy.get('button[type="submit"]').click();
-
+        cy.get('button.btn.btn-primary').last().click();
+        // cy.get('button[type="submit"]').click();
         cy.contains('20000').should('exist');
     });
 });
